@@ -154,4 +154,26 @@ router.delete('/users/:userId(\\d+)/favourites/:quizId(\\d+)',
     favouriteController.del);
 
 
+
+router.get('/quizzes/:quizId(\\d+)/play',  quizController.play);
+router.get('/quizzes/:quizId(\\d+)/check', quizController.check);
+
+router.get('/quizzes/randomplay',  quizController.randomplay);
+router.get('/quizzes/randomcheck/:quizId(\\d+)', quizController.randomcheck);
+
+
+
+router.post('/quizzes/:quizId(\\d+)/tips',
+    sessionController.loginRequired,
+    tipController.create);
+router.put('/quizzes/:quizId(\\d+)/tips/:tipId(\\d+)/accept',
+    sessionController.loginRequired,
+    quizController.adminOrAuthorRequired,
+    tipController.accept);
+router.delete('/quizzes/:quizId(\\d+)/tips/:tipId(\\d+)',
+    sessionController.loginRequired,
+    quizController.adminOrAuthorRequired,
+    tipController.destroy);
+
+
 module.exports = router;

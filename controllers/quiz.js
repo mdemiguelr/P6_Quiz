@@ -483,7 +483,8 @@ exports.check = (req, res, next) => {
         answer
     });
 };
-    exports.randomplay = (req, res, next) => {
+
+exports.randomplay = (req, res, next) => {
 
         req.session.randomPlay = req.session.randomPlay || [];
 
