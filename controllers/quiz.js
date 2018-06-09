@@ -482,6 +482,7 @@ exports.check = (req, res, next) => {
         result,
         answer
     });
+};
     exports.randomplay = (req, res, next) => {
 
         req.session.randomPlay = req.session.randomPlay || [];
@@ -537,4 +538,5 @@ exports.check = (req, res, next) => {
             result,
             score
         });
+
 };
