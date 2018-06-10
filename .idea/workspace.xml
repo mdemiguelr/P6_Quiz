@@ -17,6 +17,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="quiz.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/quiz.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1734">
+              <caret line="540" column="11" lean-forward="false" selection-start-line="540" selection-start-column="11" selection-end-line="540" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/tips/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
@@ -30,8 +40,8 @@
       <file leaf-file-name="tip.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/tip.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="25" column="117" lean-forward="false" selection-start-line="25" selection-start-column="117" selection-end-line="25" selection-end-column="117" />
+            <state relative-caret-position="280">
+              <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -139,8 +149,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="92" />
-    <option name="y" value="430" />
+    <option name="x" value="509" />
+    <option name="y" value="92" />
     <option name="width" value="1114" />
     <option name="height" value="637" />
   </component>
@@ -250,10 +260,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8036000" />
+    <option name="totallyTimeSpent" value="8239000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="430" width="1114" height="637" extended-state="0" />
+    <frame x="509" y="92" width="1114" height="637" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18298262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -665,14 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/quiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="540" column="11" lean-forward="false" selection-start-line="540" selection-start-column="11" selection-end-line="540" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -689,10 +691,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/quiz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="540" column="11" lean-forward="false" selection-start-line="540" selection-start-column="11" selection-end-line="540" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/tip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="25" column="117" lean-forward="false" selection-start-line="25" selection-start-column="117" selection-end-line="25" selection-end-column="117" />
+        <state relative-caret-position="280">
+          <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
           <folding />
         </state>
       </provider>

@@ -36,8 +36,9 @@ exports.edit = (req, res, next) => {
 
 // PUT /quizzes/:quizId
 exports.update = (req, res, next) => {
-    const{quiz,tip} = req;
+    const{quiz,tip,body} = req;
     tip.text = req.body.text;
+    tip.accepted=false;
     tip.save({fields: ["text", "accepted"]})
         .then(tip => {
             req.flash('success', 'Tip edited successfully.');
@@ -46,7 +47,7 @@ exports.update = (req, res, next) => {
         .catch(Sequelize.ValidationError, error => {
             req.flash('error', 'There are errors in the form:');
             error.errors.forEach(({message}) => req.flash('error', message));
-            res.render('tips/edit', {quiz, tip});
+            res.render('tips/edit', { tip});
         })
         .catch(error => {
             req.flash('error', 'Error editing the Quiz: ' + error.message);
