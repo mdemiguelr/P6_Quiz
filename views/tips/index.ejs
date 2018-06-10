@@ -8,7 +8,7 @@
     <% var isQuizAuthor = session.user && quizAuthorId && quizAuthorId === session.user.id; %>
     <% var isTipAuthor = session.user && tip.AuthorId === session.user.id; %>
 
-    <% if (accepted || isAdmin || isQuizAuthor) { %>
+    <% if (accepted || isAdmin || isQuizAuthor || isTipAuthor) { %>
     <li>
         <%= tip.text %>
 
