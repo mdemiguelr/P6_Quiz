@@ -23,7 +23,8 @@ exports.adminOrAuthorRequired = (req, res, next) => {
     if(isAdmin || isAuthor){
         next();
     }else{
-        req.send(403);
+        console.log('Prohibited operation: The logged in user is not the author of the quiz, nor an administrator.');
+        res.send(403);
     }
 }
 
