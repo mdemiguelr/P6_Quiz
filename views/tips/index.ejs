@@ -12,7 +12,7 @@
     <li>
         <%= tip.text %>
 
-        (by <%= tip.author = tip.author.username ? tip.authorId : "Anónimo" %>)
+        (by <%= tip.author ? tip.author.username  : "Anónimo" %>)
 
         <% if (!accepted && (isAdmin || isQuizAuthor)) { %>
 
