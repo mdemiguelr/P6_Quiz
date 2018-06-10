@@ -539,5 +539,4 @@ exports.randomplay = (req, res, next) => {
             result,
             score
         });
-
 };
