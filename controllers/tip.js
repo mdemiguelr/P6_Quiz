@@ -28,7 +28,8 @@ exports.adminOrAuthorRequired = (req, res, next) => {
     }
 }
 
-// GET /quizzes/:quizId/edit
+
+// GET /quizzes/:quizId/:tipId/edit
 exports.edit = (req, res, next) => {
     const{quiz,tip} = req;
     res.render('tips/edit', {quiz, tip});
