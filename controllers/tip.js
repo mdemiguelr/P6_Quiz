@@ -29,13 +29,13 @@ exports.adminOrAuthorRequired = (req, res, next) => {
 }
 
 
-// GET /quizzes/:quizId/:tipId/edit
+// GET /quizzes/:quizId/tips/:tipId/edit
 exports.edit = (req, res, next) => {
     const{tip,quiz} = req;
     res.render('tips/edit', {tip,quiz});
 }
 
-// PUT /quizzes/:quizId
+// PUT /quizzes/:quizId/tips/;tipId
 exports.update = (req, res, next) => {
     const{quiz,tip,body} = req;
     tip.text = req.body.text;
