@@ -141,7 +141,8 @@ exports.index = (req, res, next) => {
             const findOptions = {
                 ...countOptions,
                 offset: items_per_page * (pageno - 1),
-                limit: items_per_page
+                limit: items_per_page,
+                include: [{model: models.user, as: 'author'}]
             };
 
             findOptions.include.push(models.attachment);
