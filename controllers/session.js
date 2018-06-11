@@ -52,7 +52,7 @@ exports.loginRequired = (req, res, next) => {
 
 
 
-// MW that allows to pass only if the logged useer in is admin.
+// MW that allows to pass only if the logged usser in is admin.
 exports.adminRequired = (req, res, next) => {
 
     const isAdmin = !!req.session.user.isAdmin;
@@ -154,7 +154,7 @@ exports.new = (req, res, next) => {
 // POST /session   -- Create the session if the user authenticates successfully
 exports.create = (req, res, next) => {
 
-    const redir = req.body.redir || '/'
+    const redir = req.body.redir || '/';
 
     const login     = req.body.login;
     const password  = req.body.password;
