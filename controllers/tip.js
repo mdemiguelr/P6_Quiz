@@ -77,7 +77,7 @@ exports.update = (req, res, next) => {
             res.render('tips/edit', { tip,quiz});
         })
         .catch(error => {
-            req.flash('error', 'Error editing the Quiz: ' + error.message);
+            req.flash('error', 'Error editing the Tip: ' + error.message);
             next(error);
         });
 }
