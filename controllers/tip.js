@@ -31,8 +31,8 @@ exports.adminOrAuthorRequired = (req, res, next) => {
 
 // GET /quizzes/:quizId/:tipId/edit
 exports.edit = (req, res, next) => {
-    const{quiz,tip} = req;
-    res.render('tips/edit', {quiz, tip});
+    const{tip,quiz} = req;
+    res.render('tips/edit', {tip,quiz});
 }
 
 // PUT /quizzes/:quizId
@@ -43,12 +43,12 @@ exports.update = (req, res, next) => {
     tip.save({fields: ["text", "accepted"]})
         .then(tip => {
             req.flash('success', 'Tip edited successfully.');
-            res.redirect('/quizzes/' + quiz.id);
+            res.redirect('/goback');
         })
         .catch(Sequelize.ValidationError, error => {
             req.flash('error', 'There are errors in the form:');
             error.errors.forEach(({message}) => req.flash('error', message));
-            res.render('tips/edit', { tip});
+            res.render('tips/edit', { tip,quiz});
         })
         .catch(error => {
             req.flash('error', 'Error editing the Quiz: ' + error.message);
