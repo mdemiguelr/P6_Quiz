@@ -19,7 +19,7 @@ exports.load = (req, res, next, tipId) => {
 
 exports.adminOrAuthorRequired = (req, res, next) => {
     const isAdmin = !! req.session.user.isAdmin;
-    const isAuthor = req.session.user.id === req.tip.authorId;
+    const isAuthor = req.tip.authorId === req.session.user.id;
     if(isAdmin || isAuthor){
         next();
     }else{
@@ -27,6 +27,32 @@ exports.adminOrAuthorRequired = (req, res, next) => {
         res.send(403);
     }
 }
+
+// POST /quizzes/:quizId/tips
+exports.create = (req, res, next) => {
+    const authorId = req.session.user && req.session.user.id || 0;
+    const tip = models.tip.build(
+        {
+            text: req.body.text,
+            quizId: req.quiz.id,
+            authorId
+        });
+
+    tip.save({fields: ["text","quizId","authorId"]})
+        .then(tip => {
+            req.flash('success', 'Tip created successfully.');
+            res.redirect("back");
+        })
+        .catch(Sequelize.ValidationError, error => {
+            req.flash('error', 'There are errors in the form:');
+            error.errors.forEach(({message}) => req.flash('error', message));
+            res.redirect("back");
+        })
+        .catch(error => {
+            req.flash('error', 'Error creating the new tip: ' + error.message);
+            next(error);
+        });
+};
 
 
 // GET /quizzes/:quizId/tips/:tipId/edit
@@ -55,33 +81,6 @@ exports.update = (req, res, next) => {
             next(error);
         });
 }
-
-
-// POST /quizzes/:quizId/tips
-exports.create = (req, res, next) => {
-    const authorId = req.session.user && req.session.user.id || 0;
-    const tip = models.tip.build(
-        {
-            text: req.body.text,
-            quizId: req.quiz.id,
-            authorId
-        });
-
-    tip.save({fields: ["text","quizId","authorId"]})
-        .then(tip => {
-            req.flash('success', 'Tip created successfully.');
-            res.redirect("back");
-        })
-        .catch(Sequelize.ValidationError, error => {
-            req.flash('error', 'There are errors in the form:');
-            error.errors.forEach(({message}) => req.flash('error', message));
-            res.redirect("back");
-        })
-        .catch(error => {
-            req.flash('error', 'Error creating the new tip: ' + error.message);
-            next(error);
-        });
-};
 
 
 // GET /quizzes/:quizId/tips/:tipId/accept
