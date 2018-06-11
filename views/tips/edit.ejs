@@ -1,7 +1,7 @@
 <h1>
     Edit Tip:
 </h1>
-<form method="POST" action="/quizzes/<%= quiz.id %>/tips/<%= tip.id %>?_method=PUT" >
+<form method="post" action="/quizzes/<%= quiz.id %>/tips/<%= tip.id %>?_method=PUT" >
 
     <div class="wideRow">
 
@@ -11,9 +11,7 @@
 
         <button type="submit" class="itemNarrow">Edit</button>
     </div>
-
-</form>
-
+    
 
     <br/>
     <a href="/goback"><button type="button">Cancel</button></a>
